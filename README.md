@@ -1,6 +1,12 @@
 # Python Info Manuals
 
-This is a simple Emacs package to provide an info manual for Python.
+This is a simple Emacs package to provide an info manual for
+Python. To run the makefile, you will need virtualenv and Python 2, then simply:
+
+    $ build
+    $ make
+
+This will create `build/python.info` and `build/dir`.
 
 ## Licensing
 
