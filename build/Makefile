@@ -18,11 +18,13 @@ sphinx-build: sphinx_env
 
 python_info: python_src sphinx-build
 	sphinx_env/bin/sphinx-build -b texinfo python_src/Doc python_info
-	makeinfo python_info/python.texi -o python_info/python.info
-	install-info --dir=python_info/dir python_info/python.info
+	makeinfo python_info/python.texi -o python.info
+	install-info --dir=dir python.info
 
 clean:
-	rm python.tgz
+	rm -f python.tgz
 	rm -rf python_src
 	rm -rf python_info
 	rm -rf sphinx_env
+	rm -f python.info
+	rm -f dir
