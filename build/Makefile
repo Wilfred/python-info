@@ -13,7 +13,7 @@ python_src: python.tgz
 sphinx_env:
 	virtualenv sphinx_env
 
-sphinx-build: sphinx_env sphinx_env/bin/sphinx-build
+sphinx-build: sphinx_env
 	sphinx_env/bin/pip install sphinx==1.1.3
 
 python_info: python_src sphinx-build
