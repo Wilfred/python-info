@@ -11,7 +11,7 @@ This will create `build/python.texi`.
 ## Licensing
 
 This is really just a makefile, which is licensed under the BSD
-license. The Python info files are under the
+license (see COPYING). The Python info files are under the
 [PSF license](http://docs.python.org/2/license.html).
 
 ## Other Projects
