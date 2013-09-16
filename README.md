@@ -13,3 +13,8 @@ This will create `build/python.texi`.
 This is really just a makefile, which is licensed under the BSD
 license. The Python info files are under the
 [PSF license](http://docs.python.org/2/license.html).
+
+## Other Projects
+
+[pylookup](https://github.com/tsgates/pylookup) is also excellent if
+you're looking for searching Python docs.
