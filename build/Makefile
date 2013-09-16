@@ -18,6 +18,7 @@ sphinx-build: sphinx_env
 
 python_texinfo: python_src sphinx-build
 	sphinx_env/bin/sphinx-build -b texinfo python_src/Doc python_info
+	sed -i 's/@dircategory Documentation tools/@dircategory Programming/g' python_info/python.texi
 	cp python_info/python.texi python.texi
 
 clean:
