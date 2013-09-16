@@ -1,2 +1,4 @@
-build/Python-2.7.5/*
-build/Python-2.7.5.tgz
+build/python_info/*
+build/python_src/*
+build/sphinx_env/*
+build/python.tgz
