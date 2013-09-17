@@ -1,7 +1,14 @@
 # Python Info Manuals
 
 This is a simple Emacs package to provide an info manual for
-Python. To run the makefile, you will need virtualenv and Python 2, then simply:
+Python.
+
+To install, you need to be using [MELPA](http://melpa.milkbox.net/)
+then simply `M-x package-install python-info`.
+
+### Updating python.texi
+
+To run the makefile, you will need virtualenv and Python 2, then simply:
 
     $ cd build
     $ make
