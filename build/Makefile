@@ -1,12 +1,13 @@
+PYTHON_VERSION = '2.7.8'
 
 default: python_texinfo
 
 python.tgz:
-	wget -O python.tgz http://www.python.org/ftp/python/2.7.5/Python-2.7.5.tgz
+	wget -O python.tgz http://www.python.org/ftp/python/$(PYTHON_VERSION)/Python-$(PYTHON_VERSION).tgz
 
 python_src: python.tgz
 	tar -xzf python.tgz
-	mv Python-2.7.5 python_src
+	mv Python-$(PYTHON_VERSION) python_src
 	# based on http://stackoverflow.com/a/3952588
 	echo "texinfo_documents = [('contents', 'python', 'Python Documentation', 'Georg Brandl', 'Python', 'The Python Programming Language', 'Documentation tools', 1)]" >> python_src/Doc/conf.py
 
