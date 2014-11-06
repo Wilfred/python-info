@@ -11,7 +11,7 @@ python_src: python.tgz
 	echo "texinfo_documents = [('contents', 'python', 'Python Documentation', 'Georg Brandl', 'Python', 'The Python Programming Language', 'Documentation tools', 1)]" >> python_src/Doc/conf.py
 
 sphinx_env:
-	virtualenv sphinx_env
+	virtualenv2 sphinx_env
 
 sphinx-build: sphinx_env
 	sphinx_env/bin/pip install sphinx==1.1.3
