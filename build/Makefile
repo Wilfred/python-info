@@ -1,5 +1,6 @@
 PYTHON_VERSION = '2.7.8'
-
+VIRTUALENV_BIN = $(shell python -c "import sys;print('virtualenv'+('' if sys.version_info.major==2 else '2'))")
+ 
 default: python_texinfo
 
 python.tgz:
@@ -12,7 +13,7 @@ python_src: python.tgz
 	echo "texinfo_documents = [('contents', 'python', 'Python Documentation', 'Georg Brandl', 'Python', 'The Python Programming Language', 'Documentation tools', 1)]" >> python_src/Doc/conf.py
 
 sphinx_env:
-	virtualenv2 sphinx_env
+	$(VIRTUALENV_BIN) sphinx_env
 
 sphinx-build: sphinx_env
 	sphinx_env/bin/pip install sphinx==1.1.3
