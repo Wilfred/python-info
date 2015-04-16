@@ -29,8 +29,11 @@ clean:
 	rm -rf python_info
 	rm -rf sphinx_env
 	rm -f python.texi
+	rm -f python.info
 
-install:
+python.info:
 	makeinfo --no-split python.texi
-	cp python.info /usr/share/info
+
+install: python.info
+	cp $< /usr/share/info
 	install-info --info-dir=/usr/share/info python.info
