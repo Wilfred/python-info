@@ -18,10 +18,16 @@ sphinx_env:
 sphinx-build: sphinx_env
 	sphinx_env/bin/pip install sphinx==1.1.3
 
-python_texinfo: python_src sphinx-build
+python_info: python_src sphinx-build
 	sphinx_env/bin/sphinx-build -b texinfo python_src/Doc python_info
-	sed -i 's/@dircategory Documentation tools/@dircategory Programming/g' python_info/python.texi
-	cp python_info/python.texi python.texi
+
+python.texi: python_info python_info/python.texi Makefile
+	sed -e 's/@dircategory Documentation tools/@dircategory Programming/g' \
+		-e 's/@pxref{/@ref{/g' \
+		python_info/python.texi > $@
+
+.PHONY: python_texinfo
+python_texinfo: python.texi
 
 clean:
 	rm -f python.tgz
@@ -29,8 +35,11 @@ clean:
 	rm -rf python_info
 	rm -rf sphinx_env
 	rm -f python.texi
+	rm -f python.info
 
-install:
+python.info: python.texi
 	makeinfo --no-split python.texi
-	cp python.info /usr/share/info
+
+install: python.info
+	cp $< /usr/share/info
 	install-info --info-dir=/usr/share/info python.info
