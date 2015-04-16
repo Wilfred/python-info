@@ -23,6 +23,7 @@ python_info: python_src sphinx-build
 
 python.texi: python_info python_info/python.texi Makefile
 	sed -e 's/@dircategory Documentation tools/@dircategory Programming/g' \
+		-e 's/@pxref{/@ref{/g' \
 		python_info/python.texi > $@
 
 .PHONY: python_texinfo
