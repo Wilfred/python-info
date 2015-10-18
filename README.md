@@ -4,7 +4,7 @@ This is a simple Emacs package to provide an info manual for
 Python.
 
 To install, you need to be using [MELPA](http://melpa.milkbox.net/)
-then simply `M-x package-install python-info`.
+then simply `M-x package-install RET python-info`.
 
 ### Updating python.texi
 
