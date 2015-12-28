@@ -1,0 +1,7 @@
+language: generic
+sudo: false
+script:
+  - make
+
+notifications:
+  email: false
