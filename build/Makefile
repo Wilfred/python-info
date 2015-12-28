@@ -1,7 +1,7 @@
 PYTHON_VERSION = '2.7.10'
 VIRTUALENV_BIN = $(shell python -c "import sys;print('virtualenv'+('' if sys.version_info.major==2 else '2'))")
  
-default: python.texi
+default: python.info
 
 python.tgz:
 	wget -O python.tgz http://www.python.org/ftp/python/$(PYTHON_VERSION)/Python-$(PYTHON_VERSION).tgz
@@ -23,6 +23,9 @@ python.texi: python_src sphinx-build
 	sed -i 's/@dircategory Documentation tools/@dircategory Programming/g' python_info/python.texi
 	cp python_info/python.texi python.texi
 
+python.info: python.texi
+	makeinfo --no-split python.texi
+
 clean:
 	rm -f python.tgz
 	rm -rf python_src
@@ -30,7 +33,6 @@ clean:
 	rm -rf sphinx_env
 	rm -f python.texi
 
-install:
-	makeinfo --no-split python.texi
+install: python.info
 	cp python.info /usr/share/info
 	install-info --info-dir=/usr/share/info python.info
