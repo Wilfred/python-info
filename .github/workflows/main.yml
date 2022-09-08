@@ -11,8 +11,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      WITH_CURRENT_SHELL: "nix-shell --argstr compiler ${{matrix.compiler}} --run"
-      WITH_SHELL: "nix-shell ../../shell.nix --argstr compiler ${{matrix.compiler}} --run"
+      WITH_CURRENT_SHELL: "nix-shell --run"
 
 
     strategy:
