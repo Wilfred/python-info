@@ -1,5 +1,5 @@
-PYTHON_VERSION = '3.9.9'
-VIRTUALENV_BIN = virtualenv
+PYTHON_VERSION ?= 3.9.9
+VIRTUALENV_BIN ?= virtualenv
  
 default: python.info
 
