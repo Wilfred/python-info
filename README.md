@@ -1,7 +1,5 @@
 # Python Info Manuals
 
-[![Build Status](https://travis-ci.org/Wilfred/python-info.svg?branch=master)](https://travis-ci.org/Wilfred/python-info)
-
 This is a simple Emacs package to provide an info manual for
 Python.
 
