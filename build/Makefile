@@ -1,5 +1,6 @@
-PYTHON_VERSION = '2.7.10'
-VIRTUALENV_BIN = $(shell python -c "import sys;print('virtualenv'+('' if sys.version_info.major==2 else '2'))")
+PYTHON_VERSION ?= 3.9.9
+VIRTUALENV_BIN ?= virtualenv
+SPHINX_VERSION ?= 5.2.0
  
 default: python.info
 
@@ -16,7 +17,7 @@ sphinx_env:
 	$(VIRTUALENV_BIN) sphinx_env
 
 sphinx-build: sphinx_env
-	sphinx_env/bin/pip install sphinx==1.3.3
+	sphinx_env/bin/pip install sphinx==$(SPHINX_VERSION)
 
 python.texi: python_src sphinx-build
 	sphinx_env/bin/sphinx-build -b texinfo python_src/Doc python_info
